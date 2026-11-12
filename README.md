@@ -4,7 +4,7 @@ Minecraft Java + Metal visual overhaul for Apple Silicon, using Metallum as the 
 
 ## Current upload
 
-This commit publishes the current development workflow and plan. The renderer source and runtime evidence remain in the local workspace and are not included in this workflow-only upload. Build and validation scripts therefore require the existing local renderer checkout, Java 25 toolchain, and dependency cache; they cannot yet run from this repository alone.
+This repository publishes the current development workflow, plan, and latest material-foundation JAR in `artifacts/`. The renderer source and runtime evidence remain in the local workspace and are not included in this workflow and binary upload. Build and validation scripts therefore require the existing local renderer checkout, Java 25 toolchain, and dependency cache; they cannot yet run from this repository alone.
 
 - `AGENTS.md`: workspace rules and the vendored ponytail skill location.
 - `metallum/AGENTS.md`: renderer rules, ECC verification, and independent review requirements.
