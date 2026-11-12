@@ -1,0 +1,8 @@
+.tooling/
+.gradle-local/
+.DS_Store
+metallum/.gradle/
+metallum/build/
+metallum/run/
+hs_err_*.log
+*.hprof
