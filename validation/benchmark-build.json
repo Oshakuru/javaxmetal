@@ -1,0 +1,15 @@
+{
+  "artifact": "metallum-0.0.25-benchmark.1.jar",
+  "artifactSha256": "b2dc080e7c3648705373f4fceef4c16a20af0978bb490c2cf78e59ac8305739f",
+  "sourceTreeSha256": "76ae2fb664deb7c5352da0e3dee3e7c57521eb4e6af23c89c79b359353d703b4",
+  "upstreamRevision": "467d312b8bc68ee3210697f01855244e8f2831a2",
+  "workingTree": "local uncommitted prototype changes",
+  "checks": {
+    "build": "PASS",
+    "numericProjection": "PASS (synthetic, not production capture)",
+    "frameStatistics": "PASS",
+    "diffWhitespace": "PASS",
+    "independentReview": "no timing/state-machine blocker; metadata limitation addressed",
+    "inGameBenchmark": "NOT PERFORMED"
+  }
+}

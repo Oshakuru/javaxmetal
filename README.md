@@ -2,15 +2,13 @@
 
 Minecraft Java + Metal visual overhaul for Apple Silicon, using Metallum as the foundation and Vanilla RTX as the visual target.
 
-## Current upload
+## Repository contents
 
-This repository publishes the current development workflow, plan, and latest material-foundation JAR in `artifacts/`. The renderer source and runtime evidence remain in the local workspace and are not included in this workflow and binary upload. Build and validation scripts therefore require the existing local renderer checkout, Java 25 toolchain, and dependency cache; they cannot yet run from this repository alone.
+This is a snapshot of the local project workspace: renderer source in `metallum/`, workflow instructions and ECC references, development plan, validation scripts and recorded evidence, project images, and candidate JARs in `artifacts/`. The separate `minecraft-rust-review/` source snapshot is retained as research reference, not the selected renderer. Original licenses and notices are preserved.
 
-- `AGENTS.md`: workspace rules and the vendored ponytail skill location.
-- `metallum/AGENTS.md`: renderer rules, ECC verification, and independent review requirements.
-- `metallum/.agents/`: ponytail, selected ECC skills, reviewer references, and ECC license/provenance.
-- `PROTOTYPE.md`: development plan and evidence ledger, including historical decisions superseded by later entries.
-- `build-metallum.sh` and `validation/`: existing local build, numerical checks, and benchmark protocol.
+Local Java toolchains, Gradle caches, generated build directories, nested Git metadata, and JVM crash dumps are excluded. Build scripts expect Java 25 in `.tooling/jdk25/Contents/Home` and cached dependencies in `.gradle-local`; provision these locally before running the offline verification script.
+
+Read `AGENTS.md` and `metallum/AGENTS.md` before renderer work. `PROTOTYPE.md` separates local verification from target acceptance and retains historical decisions superseded by later entries. Candidate binaries and their checksums are in `artifacts/`; only `materials.1` is the current candidate.
 
 ## Workflow
 

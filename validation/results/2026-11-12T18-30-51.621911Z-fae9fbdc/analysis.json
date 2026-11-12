@@ -1,0 +1,14 @@
+{
+  "status": "ACCEPTED stationary baseline; scope limited to this scene/configuration",
+  "rawCsvMatchesReport": true,
+  "frames": 106281,
+  "measuredSeconds": 180.002904333,
+  "weightedAverageFps": 590.4404731347186,
+  "framesOver16_67Ms": 3,
+  "framesOver33_33Ms": 0,
+  "limitations": [
+    "Game-loop wall time, not isolated GPU timing or monitor delivery",
+    "Stationary single scene at 1440x900, 8-chunk render and simulation distance",
+    "Does not establish performance with reflections, higher distances, or moving through new chunks"
+  ]
+}

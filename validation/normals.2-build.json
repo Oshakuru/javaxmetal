@@ -1,0 +1,7 @@
+{
+  "artifact": "metallum-0.0.25-normals.2.jar",
+  "sha256": "635276c709e117a59ea25ab02f17af02b29c1c3cefc514588de4e37ea47bbc3e",
+  "localChecks": "Java build, frame statistics, synthetic projection, production CameraSnapshot regression, world-normal/UV contract, invalidation and column-major packing PASS",
+  "independentReview": "No substantiated blockers; exact upload hook and view pairing checked against Minecraft 26.3 bytecode",
+  "targetAcceptance": "NOT PERFORMED: Mixin application, Metal execution, motion stability"
+}

@@ -6,4 +6,4 @@ This is a material audit/diagnostic build, not the planned integrated visual ren
 
 In the duplicate test instance, with Minecraft 26.3, Fabric, compatible Sodium, and Iris disabled, remove the previous Metallum JAR from `mods` and copy this one in. Keep exactly one Metallum JAR installed. F7 exports the material audit; F8 cycles Off/Depth/Surface directions; F9 controls the benchmark. Do not use the benchmark with AFK limiting enabled. See the benchmark protocol in `../validation/BENCHMARK.md`.
 
-Earlier experimental JARs are intentionally omitted. No rebuild or new gameplay check was performed for this upload. Renderer source is not included in this workflow snapshot; upstream attribution is in the root README.
+Earlier experimental JARs are archived here for project history; they include known failures and unissued builds. Do not install them in place of the current candidate. No rebuild or new gameplay check was performed for this upload. Renderer source is included under `../metallum/`; upstream attribution is in the root README.

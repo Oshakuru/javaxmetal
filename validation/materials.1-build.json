@@ -1,0 +1,10 @@
+{
+  "artifact": "metallum-0.0.25-materials.1.jar",
+  "sha256": "f84351ec0cb67ccfb9951afaab768c0eec1c27bdcf05c09f7e4c56dffe2dc9bf",
+  "purpose": "On-demand material catalog/atlas audit; no PBR shading change",
+  "mappedTextures": 48,
+  "families": 8,
+  "localChecks": "build, Java types, diff whitespace, reconstruction/statistics regressions and material catalog validation PASS",
+  "review": "No concrete blocker; schema/provenance feedback addressed",
+  "target": "NOT PERFORMED: atlas accessor application, active pack override, selected model face audit"
+}
