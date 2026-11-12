@@ -35,7 +35,8 @@ public final class BenchmarkRecorder {
         if (session != null) {
             finish(client, "CANCELLED: F9 pressed");
         } else if (client.level != null && client.player != null && client.gui.screen() == null
-                && client.gui.overlay() == null && !DepthDiagnostic.enabled && client.isWindowActive()) {
+                && client.gui.overlay() == null && !DepthDiagnostic.enabled
+                && !(com.metallum.visual.VisualState.enabled && com.metallum.visual.VisualState.materials) && client.isWindowActive()) {
             if (client.options.inactivityFpsLimit().get() == net.minecraft.client.InactivityFpsLimit.AFK) {
                 message(client, "Disable the AFK FPS cap in settings before starting a stationary benchmark.");
                 return;
@@ -157,6 +158,9 @@ public final class BenchmarkRecorder {
         final int width, height;
         final Object level;
         final Settings settings;
+        final boolean visuals = com.metallum.visual.VisualState.enabled;
+        final boolean materialDiagnostic = com.metallum.visual.VisualState.materials;
+        final int visualRevision = com.metallum.visual.VisualState.revision;
         int run;
         boolean recording;
         long phaseStart, previousFrame;
@@ -171,6 +175,8 @@ public final class BenchmarkRecorder {
             level = client.level;
             settings = Settings.capture(client);
             phaseStart = now;
+            metadata.put("visualPrototypeEnabled", visuals);
+            metadata.put("materialDiagnostic", materialDiagnostic);
             metadata.put("startedUtc", Instant.now().toString());
             metadata.put("warmupSecondsPerRun", 30);
             metadata.put("measurementSecondsPerRun", 60);
@@ -200,7 +206,9 @@ public final class BenchmarkRecorder {
             if (client.level != level || client.player == null) return "world changed";
             if (!client.isWindowActive()) return "window lost focus";
             if (client.isPaused() || client.gui.screen() != null || client.gui.overlay() != null) return "menu, pause, or overlay opened";
-            if (DepthDiagnostic.enabled) return "diagnostic enabled";
+            if (DepthDiagnostic.enabled || (com.metallum.visual.VisualState.enabled && com.metallum.visual.VisualState.materials)) return "diagnostic enabled";
+            if (visuals != com.metallum.visual.VisualState.enabled || materialDiagnostic != com.metallum.visual.VisualState.materials
+                    || visualRevision != com.metallum.visual.VisualState.revision) return "visual mode or resources changed";
             if (client.getWindow().getWidth() != width || client.getWindow().getHeight() != height) return "framebuffer resized";
             var camera = client.gameRenderer.mainCamera();
             if (camera.position().distanceToSqr(position) > 0.0004

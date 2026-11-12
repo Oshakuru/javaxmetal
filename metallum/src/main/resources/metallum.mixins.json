@@ -9,7 +9,10 @@
     "DepthDiagnosticKeyMixin",
     "BenchmarkFrameMixin",
     "DiagnosticCameraMixin",
-    "MaterialAtlasAccessor"
+    "MaterialAtlasAccessor",
+    "VisualAtlasReloadMixin",
+    "SpriteImageAccessor",
+    "VisualBlockChangeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

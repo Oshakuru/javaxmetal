@@ -1,9 +1,9 @@
-# Current material foundation candidate
+# Candidate JARs
 
-`metallum-0.0.25-materials.1.jar` is the latest local candidate. Verify it against `SHA256SUMS`. The original build manifest is preserved alongside it; its pending target status reflects build time. Later target evidence in `../PROTOTYPE.md` verifies loaded-atlas lookup for all 48 mappings and sea-lantern emissive identification. Resource override/reload and broader runtime acceptance remain pending.
+The current candidate is **metallum-0.0.25-visuals.2.jar**. Verify its checksum against `SHA256SUMS`; the artifact/source manifest is `visuals.2-build.json`. See `../validation/VISUALS.2.md` for exact installation, controls and one consolidated acceptance session. Keep exactly one Metallum JAR installed in the duplicate test instance, with Iris disabled.
 
-This is a material audit/diagnostic build, not the planned integrated visual renderer. It does not add PBR lighting, reflections, or emissive illumination.
+This candidate adds bounded material shading, reflections and nearby colored lights with occlusion. Local checks and independent review passed; actual visuals.2 gameplay/runtime/performance acceptance is pending. Earlier visuals.1 recordings establish representative iron reflections and material diagnostics only.
 
-In the duplicate test instance, with Minecraft 26.3, Fabric, compatible Sodium, and Iris disabled, remove the previous Metallum JAR from `mods` and copy this one in. Keep exactly one Metallum JAR installed. F7 exports the material audit; F8 cycles Off/Depth/Surface directions; F9 controls the benchmark. Do not use the benchmark with AFK limiting enabled. See the benchmark protocol in `../validation/BENCHMARK.md`.
+`visuals.1.jar` here is a **source-matched rebuild** from preserved previous sources, SHA-256 5ab930b0568200981696be241930f9f939f2e13fdb110d5e6e730f382c7bf6ca. It is not the original tested binary (8a5300b0…), which was absent from the workspace when the rollback was prepared. `visuals.1-build.json` retains the original build record; see the visuals.2 manifest for rebuilt rollback provenance. The exact previous source archive is in `../validation/checkpoints/`.
 
-Earlier experimental JARs are archived here for project history; they include known failures and unissued builds. Do not install them in place of the current candidate. No rebuild or new gameplay check was performed for this upload. Renderer source is included under `../metallum/`; upstream attribution is in the root README.
+Older material/normal/depth/benchmark JARs are historical experiments, including known failures and unissued builds. They are not current recommendations. The material catalog still covers 48 representative textures, not all blocks. Full path tracing, sun shadows, general indirect illumination and finished glass/water refraction are not implemented.

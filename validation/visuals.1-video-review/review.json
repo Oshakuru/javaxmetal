@@ -1,0 +1,27 @@
+{
+  "source": "/Users/ernestovega/Desktop/Screen Recording 2026-11-12 at 2.53.45\u202fp.m..mov",
+  "durationSeconds": 162.05166666666668,
+  "context": "User submitted recording for visuals.1 acceptance; exact installed JAR not independently established",
+  "method": "32 extracted frames: 16 evenly spaced across duration plus requested times 60,62,64,66,68,70,72,74,110,112,114,116,118,120,122,124 seconds. AVFoundation approximate seeking; not exhaustive temporal review.",
+  "observed": [
+    "Iron-block top has visible sugar-cane reflections in several sampled views near 62\u201371 seconds",
+    "Sampled gameplay continues across movement, block placement and menus",
+    "Held block/hand, crosshair, hotbar and subtitles remain visually recognizable without an obvious fullscreen effect overlay in inspected frames",
+    "Gold and diamond blocks are shown, but no matched OFF/ON pair or diagnostic establishes their material response"
+  ],
+  "acceptance": {
+    "ironReflectionAppearance": "VERIFIED in supplied video; bounded visual observation",
+    "integrationOfExpectedArtifact": "NOT VERIFIED: no installed JAR fingerprint or game log supplied",
+    "roughMaterialSeparation": "NOT VERIFIED: no confirmed matched OFF/ON comparison",
+    "emissionAndNearbyIllumination": "NOT VERIFIED: daytime emitter views do not distinguish new response from vanilla lighting",
+    "materialCoverageDiagnostic": "NOT OBSERVED in sampled frames",
+    "performance": "NOT MEASURED",
+    "fullMotionStabilityResizeReloadRejoin": "NOT VERIFIED by sampled-frame review"
+  },
+  "notes": [
+    "Diamond block, ores, armor and held items are outside this candidate\u2019s assigned opaque block-material coverage; no automatic expectation of metal response",
+    "No clear F6 OFF/ON or F10 state can be inferred from sampled frames alone",
+    "Source video remains at user-provided location; only evidence frames saved in workspace",
+    "No renderer source/JAR changed; no GitHub upload; no Prism/world modifications"
+  ]
+}

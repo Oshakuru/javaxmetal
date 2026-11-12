@@ -401,7 +401,7 @@ final class MetalUtilities {
     }
 
     @Nullable
-    private static MTLRenderPipelineState buildPipeline(
+    static MTLRenderPipelineState buildPipeline(
             final String mslSource,
             final String vertexEntry,
             final String fragmentEntry,

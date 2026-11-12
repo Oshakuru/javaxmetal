@@ -19,7 +19,7 @@ Use `.agents/ecc/code-reviewer.md` and `.agents/ecc/java-reviewer.md` as review 
 - Plan larger features in the existing `../PROTOTYPE.md`; capture decisions and verified results there.
 - Follow ECC's build/type/lint/test/security/diff phases using this project's tools, not its illustrative npm commands.
 - Build: `sh ../build-metallum.sh --offline` (omit offline only when new dependencies are required).
-- Java compilation checks Java types. No standalone Metal compiler is installed; runtime shader compilation is a separate check.
+- Java compilation checks Java types. No standalone Metal compiler is installed. On macOS with Swift, verify.sh runs an isolated native Metal fixture; Minecraft/Metal-JVM shader integration remains a separate target check.
 - Diff hygiene: `git diff --check`, inspect tracked diffs and untracked source files.
 - There is no configured linter or coverage instrumentation. Report those as not configured; do not claim 80% coverage or an automated test pass from Gradle's NO-SOURCE tasks.
 - Use meaningful numeric regression checks for reconstruction math and test-first reproductions for regressions where feasible. GPU behavior needs target checks. Do not add web/database tests or superficial coverage tests.

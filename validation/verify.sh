@@ -29,6 +29,19 @@ fi
     "$WORKSPACE/validation/MaterialCatalogCheck.java"
 "$WORKSPACE/.tooling/jdk25/Contents/Home/bin/java" -cp "$CHECK_CLASSES:$GSON_JAR" MaterialCatalogCheck \
     "$WORKSPACE/metallum/src/main/resources/assets/metallum/materials/default.json"
+"$WORKSPACE/.tooling/jdk25/Contents/Home/bin/javac" -d "$CHECK_CLASSES" \
+    "$WORKSPACE/metallum/src/main/java/com/metallum/visual/MaterialGrid.java" \
+    "$WORKSPACE/validation/MaterialGridCheck.java" \
+    "$WORKSPACE/metallum/src/main/java/com/metallum/visual/LocalLights.java" \
+    "$WORKSPACE/validation/LocalLightsCheck.java"
+"$WORKSPACE/.tooling/jdk25/Contents/Home/bin/java" -cp "$CHECK_CLASSES" MaterialGridCheck
+"$WORKSPACE/.tooling/jdk25/Contents/Home/bin/java" -cp "$CHECK_CLASSES" LocalLightsCheck
 echo 'PASS: Java build, diff whitespace, and numerical reconstruction checks'
 echo 'NOT CONFIGURED: standalone linter and coverage'
-echo 'PENDING: runtime Metal shader and target gameplay checks for the latest JAR'
+if [ "$(uname -s)" = Darwin ] && xcrun --find swift >/dev/null 2>&1; then
+    xcrun swift "$WORKSPACE/validation/VisualMetalCheck.swift" \
+        "$WORKSPACE/metallum/src/main/resources/assets/metallum/shaders/mixed_material.metal"
+else
+    echo 'NOT PERFORMED: native Metal synthetic checks (requires macOS, Metal and Swift)'
+fi
+echo 'PENDING: Minecraft Mixin application, Metal-JVM integration, visual acceptance and effect performance'

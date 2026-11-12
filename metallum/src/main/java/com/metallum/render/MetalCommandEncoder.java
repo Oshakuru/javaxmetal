@@ -34,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 final class MetalCommandEncoder implements CommandEncoderBackend {
     public static final int MAX_SUBMITS_IN_FLIGHT = 3;
     private final MetalDevice device;
+    private final MetalWorldEffects worldEffects;
     private long currentSubmitIndex = MAX_SUBMITS_IN_FLIGHT;
     private final InFlight[] inFlight = new InFlight[MAX_SUBMITS_IN_FLIGHT];
     private final Semaphore[] submitSemaphores = new Semaphore[MAX_SUBMITS_IN_FLIGHT];
@@ -62,6 +63,7 @@ final class MetalCommandEncoder implements CommandEncoderBackend {
 
     MetalCommandEncoder(final MetalDevice device) {
         this.device = device;
+        this.worldEffects = new MetalWorldEffects(device, this);
         this.transientMemory = new MetalTransientMemory(device, this);
         fence = MetalUtilities.nonNil(device.metalDevice().newFence(), "newFence");
         for (int slot = 0; slot < MAX_SUBMITS_IN_FLIGHT; slot++) {
@@ -693,7 +695,18 @@ final class MetalCommandEncoder implements CommandEncoderBackend {
         return true;
     }
 
+    MTLFence worldEffectsFence() { return fence; }
+
+    void prepareWorldEffects(MetalGpuTexture color, MetalGpuTexture depth) {
+        submitRenderPass();
+        flushPendingClear(color);
+        flushPendingClear(depth);
+        endEncoder();
+        if (com.metallum.DepthDiagnostic.enabled) captureWorldDepth(depth);
+    }
+
     void close() {
+        worldEffects.close();
         if (diagnosticSnapshot != null) {
             diagnosticSnapshot.close();
             diagnosticSnapshot = null;

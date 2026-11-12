@@ -16,6 +16,13 @@ abstract class DiagnosticCameraMixin {
         DiagnosticCameraCapture.beginFrame();
     }
 
+    @Inject(method = "renderLevel", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/GameRenderer;render3dHud(Lnet/minecraft/client/renderer/state/level/CameraRenderState;Lnet/minecraft/client/renderer/state/level/PlayerRenderState;Lnet/minecraft/client/renderer/state/OptionsRenderState;Z)V"),
+            require = 1, expect = 1, allow = 1)
+    private void metallum$shadeWorldBeforeHud(CallbackInfo ci) {
+        com.metallum.render.MetalWorldEffects.renderWorld();
+    }
+
     // Observe the final projection after bobbing/hurt/nausea, without modifying it.
     @ModifyArg(method = "renderLevel", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/renderer/ProjectionMatrixBuffer;getBuffer(Lorg/joml/Matrix4f;)Lcom/mojang/renderpearl/api/buffers/GpuBufferSlice;"),

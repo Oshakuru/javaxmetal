@@ -1,0 +1,21 @@
+{
+  "source": "/Users/ernestovega/Desktop/Screen Recording 2026-11-12 at 3.01.13\u202fp.m..mov",
+  "durationSeconds": 37.16833333333334,
+  "method": "16 evenly spaced extracted frames; approximate AVFoundation seeks, not exhaustive temporal analysis",
+  "observed": [
+    "Material coverage diagnostic visible in multiple views: yellow metal cube near reeds and gold block, blue/cyan mapped rough faces and log faces, orange emissive faces including central sea-lantern fixture",
+    "Unassigned surroundings darkened while sky remains original, matching intended diagnostic implementation",
+    "Normal scene appearance returns around sampled 11.6\u201316.3 and 34.8 seconds",
+    "Held iron block, hotbar, crosshair and subtitles remain normally rendered during material diagnostic"
+  ],
+  "acceptance": {
+    "materialDiagnosticRendering": "VERIFIED for representative sampled surfaces, not complete per-face coverage",
+    "diagnosticReturnToNormalImage": "VERIFIED visually; video alone does not distinguish F10 OFF from F6 OFF",
+    "handHudExclusion": "Supported for sampled material diagnostic views",
+    "newEmissiveIllumination": "NOT VERIFIED: orange diagnostic is identity only; ordinary daytime light is insufficient evidence",
+    "roughnessAndF6OffOnComparison": "NOT VERIFIED: no exact confirmed same-pose effect OFF/ON pair",
+    "installedJarHash": "NOT VERIFIED",
+    "performanceAndFullMotionStability": "NOT MEASURED"
+  },
+  "changes": "Evidence/documentation only; no new source or JAR, no build rerun, no upload, no Prism/world modifications"
+}
